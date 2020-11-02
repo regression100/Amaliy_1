@@ -1,6 +1,6 @@
 
 function getSimple() {
-    document.getElementById("root").innerHTML="    <section id=\"simple\" class=\"mt-5 p-2 shadow row w-50 text-center d-flex justify-content-center\" style=\"background-color: #cdcdcd\">\n" +
+    document.getElementById("root").innerHTML="    <section id=\"simple\" class=\"mt-5 p-2 shadow row w-75 text-center d-flex justify-content-center\" style=\"background-color: #cdcdcd\">\n" +
         "        <p class=\"col-12\" style=\"font-style: oblique\">Oddiy usul</p>\n" +
         "        <div class=\"col-md-6 col-sm-12 border mt-2 p-2\">\n" +
         "            <label for=\"tempratura\">Bahorda haroratning kelishi:</label>\n" +
@@ -42,29 +42,29 @@ function getSimple() {
 
 function getOptimization() {
 
-    document.getElementById("root").innerHTML="    <section id=\"optimization\" class=\"mt-5 p-2 shadow row w-50 text-center d-flex justify-content-center\" style=\"background-color: #cdcdcd\">\n" +
+    document.getElementById("root").innerHTML="    <section id=\"optimization\" class=\"mt-5 p-2 shadow row w-75 text-center d-flex justify-content-center\" style=\"background-color: #cdcdcd\">\n" +
         "        <p class=\"col-12\" style=\"font-style: oblique\">Optimizatsiyalangan usul (Dalillarni kuchi 1 va 100 oralig'ida ifodalanadi)</p>\n" +
         "        <div class=\"col-md-6 col-sm-12 border mt-2 p-2\">\n" +
         "            <label for=\"tempraturaO\">Bahorda haroratning kelishi:</label>\n" +
-        "            <input type=\"number\" class=\"input-group\" placeholder=\"0 dan 100 gacha kiriting\" name=\"tempraturaO\" id=\"tempraturaO\">\n" +
+        "            <input type=\"number\" class=\"form-control\" placeholder=\"0 dan 100 gacha kiriting\" name=\"tempraturaO\" id=\"tempraturaO\">\n" +
         "            </input>\n" +
         "        </div>\n" +
         "\n" +
         "        <div class=\"col-md-6 col-sm-12 border mt-2 p-2\">\n" +
         "            <label for=\"rainO\">Bahorda yomg'ir yog'ishi:</label>\n" +
-        "            <input type=\"number\" class=\"input-group\" placeholder=\"0 dan 100 gacha kiriting\" name=\"rainO\" id=\"rainO\">\n" +
+        "            <input type=\"number\" class=\"form-control\" placeholder=\"0 dan 100 gacha kiriting\" name=\"rainO\" id=\"rainO\">\n" +
         "            </input>\n" +
         "        </div>\n" +
         "\n" +
         "        <div class=\"col-md-6 col-sm-12 border mt-2 p-2\">\n" +
         "            <label for=\"ishlovO\">Yerga ishlov berilish:</label>\n" +
-        "            <input type=\"number\" class=\"input-group\" placeholder=\"0 dan 100 gacha kiriting\" name=\"ishlovO\" id=\"ishlovO\">\n" +
+        "            <input type=\"number\" class=\"form-control\" placeholder=\"0 dan 100 gacha kiriting\" name=\"ishlovO\" id=\"ishlovO\">\n" +
         "            </input>\n" +
         "        </div>\n" +
         "\n" +
         "        <div class=\"col-md-6 col-sm-12 border mt-2 p-2\">\n" +
         "            <label for=\"nuriO\">O'g'it berish:</label>\n" +
-        "            <input type=\"number\" class=\"input-group\" placeholder=\"0 dan 100 gacha kiriting\" name=\"nuriO\" id=\"nuriO\">\n" +
+        "            <input type=\"number\" class=\"form-control\" placeholder=\"0 dan 100 gacha kiriting\" name=\"nuriO\" id=\"nuriO\">\n" +
         "            </input>\n" +
         "        </div>\n" +
         "\n" +
