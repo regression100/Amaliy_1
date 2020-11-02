@@ -11,4 +11,9 @@ public class MainController {
         return "main";
     }
 
+    @GetMapping("/amaliy_1")
+    public String amaliy_1(){
+        return "amaliy_1";
+    }
+
 }
