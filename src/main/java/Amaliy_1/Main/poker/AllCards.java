@@ -7,14 +7,18 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 
-//@Data
+@Data
 //@AllArgsConstructor
 //@NoArgsConstructor
-public final class AllCards {
+public class AllCards {
     private static ArrayList<Card> gishtlar=new ArrayList<>();
     private static ArrayList<Card> topponlar=new ArrayList<>();
     private static ArrayList<Card> chilliklar=new ArrayList<>();
     private static ArrayList<Card> qargalar=new ArrayList<>();
+
+    public AllCards() {
+    }
+
 //    private static TypeList typeList;
 
     public static ArrayList<ArrayList<Card>> generate(){
