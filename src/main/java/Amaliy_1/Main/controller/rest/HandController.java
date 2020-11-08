@@ -30,7 +30,7 @@ public class HandController {
         for (int i = 0; i <hands.size(); i++) {
             hands.set(i, AllCards.sort(hands.get(i)));
         }
-        System.out.println(cards);
+//        System.out.println(cards);
         AbstractDto abstractDto=new AbstractDto(cards,hands);
 
         return ResponseEntity.ok(abstractDto);

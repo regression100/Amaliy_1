@@ -14,7 +14,7 @@ public final class AllCards {
 //    private static TypeList typeList;
 
     public static ArrayList<ArrayList<Card>> generate(){
-        ArrayList<ArrayList<Card>> cards=new ArrayList<>();
+        ArrayList<ArrayList<Card>> cards=new ArrayList<ArrayList<Card>>();
         String special="";
         for (int i = 2; i <=14; i++) {
             switch (i){
