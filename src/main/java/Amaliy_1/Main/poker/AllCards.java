@@ -1,11 +1,15 @@
 package Amaliy_1.Main.poker;
 
 import Amaliy_1.Main.generator.RandomEngine;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 
-@Data
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
 public final class AllCards {
     private static ArrayList<Card> gishtlar=new ArrayList<>();
     private static ArrayList<Card> topponlar=new ArrayList<>();
