@@ -4,6 +4,7 @@ import Amaliy_1.Main.generator.RandomEngine;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public final class AllCards {
@@ -51,7 +52,7 @@ public final class AllCards {
         return cards;
     }
 
-    public static ArrayList<Hand> generateHands(ArrayList<ArrayList<Card>> cards, int handCount, String[] names){
+    public static ArrayList<Hand> generateHands(List<ArrayList<Card>> cards, int handCount, String[] names){
         if (handCount>10||handCount<2||names.length!=handCount){
             return null;
         }
