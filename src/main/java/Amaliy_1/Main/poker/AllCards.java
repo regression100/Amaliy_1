@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @Data
 //@AllArgsConstructor
 //@NoArgsConstructor
-public class AllCards {
+public final class AllCards {
     private static ArrayList<Card> gishtlar=new ArrayList<>();
     private static ArrayList<Card> topponlar=new ArrayList<>();
     private static ArrayList<Card> chilliklar=new ArrayList<>();
