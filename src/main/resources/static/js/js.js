@@ -97,7 +97,9 @@ function getOptimizationValues() {
     console.log(tempratura);
 
     if (tempratura>100||tempratura<1||rain>100||rain<1||ishlov>100||ishlov<1||nuri>100||nuri<1||isNaN(tempratura)||isNaN(rain)||isNaN(ishlov)||isNaN(nuri)){
-        document.getElementById("natija").innerHTML="<h5 class='mb-2' style='color: red'>Noto'g'ri qiymat kiritilgan! (Qiymatlar 1 va 100 oralig'ida bo'lishi zarur)</h5>\n";
+        document.getElementById("natija").innerHTML="<h5 class='mb-2' style='color: red'>" +
+            "Noto'g'ri qiymat kiritilgan! (Qiymatlar 1 va 100 oralig'ida bo'lishi zarur)" +
+            "</h5>\n";
     }
     else {
         let out=((tempratura+rain+ishlov+nuri)/4);

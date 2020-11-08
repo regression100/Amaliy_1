@@ -8,8 +8,6 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 
 @Data
-//@AllArgsConstructor
-//@NoArgsConstructor
 public final class AllCards {
     private static ArrayList<Card> gishtlar=new ArrayList<>();
     private static ArrayList<Card> topponlar=new ArrayList<>();
@@ -18,8 +16,6 @@ public final class AllCards {
 
     public AllCards() {
     }
-
-//    private static TypeList typeList;
 
     public static ArrayList<ArrayList<Card>> generate(){
         ArrayList<ArrayList<Card>> cards=new ArrayList<ArrayList<Card>>();

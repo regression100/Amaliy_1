@@ -58,7 +58,7 @@ function start() {
                 ids[i]=ab.hands[i].name+"1";
 
                 if (ab.hands[i].name!=="Siz"){
-                    out+="<div id='"+ab.hands[i].name+"' class=\"col-2 m-4 w-100\">\n" +
+                    out+="<div id='"+ab.hands[i].name+"' class=\"col-lg-2 col-md-4 col-sm-12 m-4 w-100\">\n" +
                         "\n" +
                         "            <div class=\"mt-5\">\n" +
                         "                <p>"+ab.hands[i].name+"</p>\n" +
@@ -76,7 +76,7 @@ function start() {
                         "        </div>";
                 }
                 else {
-                    out+="<div id='"+ab.hands[i].name+"' class=\"col-2 m-4 w-100\">\n" +
+                    out="<div id='"+ab.hands[i].name+"' class=\"col-lg-2 col-md-4 col-sm-12 m-4 w-100\">\n" +
                         "\n" +
                         "            <div class=\"mt-5\">\n" +
                         "                <p>"+ab.hands[i].name+"</p>\n" +
@@ -91,7 +91,7 @@ function start() {
                         "            </div>\n" +
                         "\n" +
                         "\n" +
-                        "        </div>";
+                        "        </div>"+out;
                 }
 
 
@@ -107,7 +107,6 @@ function start() {
             console.log(ab);
         })
 }
-
 
 function change() {
     let index=document.getElementById("change_value").value;
@@ -208,7 +207,6 @@ function view_other_cards() {
     }
 
 }
-
 
 function cancel() {
     axios.post("api/check/all", JSON.parse(localStorage.getItem('all')).hands)

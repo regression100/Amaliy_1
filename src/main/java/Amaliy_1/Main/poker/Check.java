@@ -4,12 +4,6 @@ import java.util.ArrayList;
 
 public final class Check {
 
-
-
-//    public static int amount_rank_check(Hand hand){
-//        return hand.getCards().get(0).getRank()+hand.getCards().get(1).getRank()+hand.getCards().get(2).getRank()+hand.getCards().get(3).getRank()+hand.getCards().get(4).getRank();
-//    }
-
     public static boolean royal_flush(Hand hand){
 
         return straight(hand) && flush(hand) && hand.getCards().get(0).getRank()==10;
@@ -135,7 +129,6 @@ public final class Check {
         int rank4=hand.getCards().get(4).getRank();
         return (rank0==rank1)||(rank1==rank2)||(rank2==rank3)||(rank3==rank4);
     }
-
 
     public static ArrayList<FinalRank> generate_final_rank_by_card_position(ArrayList<Hand> hands){
         ArrayList<FinalRank> ranks = new ArrayList<>();
@@ -539,7 +532,6 @@ public final class Check {
         return temp;
 
     }
-
 
     public static String check_string(Hand hand){
         if (royal_flush(hand)) return "Royal flush";
