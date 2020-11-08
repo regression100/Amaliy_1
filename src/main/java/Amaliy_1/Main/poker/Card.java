@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class Card {
     private String type;
     private int rank;
+    private String symbol;
+    private String color;
 }

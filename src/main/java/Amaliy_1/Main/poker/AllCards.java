@@ -15,11 +15,28 @@ public final class AllCards {
 
     public static ArrayList<ArrayList<Card>> generate(){
         ArrayList<ArrayList<Card>> cards=new ArrayList<>();
+        String special="";
         for (int i = 2; i <=14; i++) {
-            Card gisht=new Card("gisht",i);
-            Card toppon=new Card("toppon",i);
-            Card chillik=new Card("chillik",i);
-            Card qarga=new Card("qarga", i);
+            switch (i){
+                case 11:
+                    special="J";
+                    break;
+                case 12:
+                    special="Q";
+                    break;
+                case 13:
+                    special="K";
+                    break;
+                case 14:
+                    special="A";
+                    break;
+                default:
+                    special=""+i;
+            }
+            Card gisht=new Card("gisht",i,special+" &#9830", "red");
+            Card toppon=new Card("toppon",i,special+" &#9829", "red");
+            Card chillik=new Card("chillik",i,special+" &#9827", "black");
+            Card qarga=new Card("qarga", i,special+" &#9824", "black");
             gishtlar.add(gisht);
             topponlar.add(toppon);
             chilliklar.add(chillik);
@@ -34,12 +51,12 @@ public final class AllCards {
         return cards;
     }
 
-    public static ArrayList<Hand> generateHands(int handCount, String[] names){
+    public static ArrayList<Hand> generateHands(int handCount, String[] names, ArrayList<ArrayList<Card>> cards){
         if (handCount>10||handCount<2||names.length!=handCount){
             return null;
         }
         ArrayList<Hand> hands=new ArrayList<>();
-        ArrayList<ArrayList<Card>> cards=generate();
+
 
         for (int i = 0; i < handCount; i++) {
             Hand hand=new Hand();
@@ -54,11 +71,16 @@ public final class AllCards {
                 int rand=RandomEngine.random(cards.size());
                 int rand2=RandomEngine.random(cards.get(rand).size());
 
-                Card card=new Card(cards.get(rand).get(rand2).getType(),cards.get(rand).get(rand2).getRank());
+                Card card=new Card(cards.get(rand).get(rand2).getType(),cards.get(rand).get(rand2).getRank(), cards.get(rand).get(rand2).getSymbol(), cards.get(rand).get(rand2).getColor());
                 cards.get(rand).remove(cards.get(rand).get(rand2));
                 currentHandCards.add(card);
 
 
+            }
+            for (int k = 0; k < cards.size(); k++) {
+                if (cards.get(k).size()==0){
+                    cards.remove(cards.get(k));
+                }
             }
             hand.setCards(currentHandCards);
             hands.add(hand);

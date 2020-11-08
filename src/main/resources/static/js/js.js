@@ -106,5 +106,4 @@ function getOptimizationValues() {
             "        <h5 class='mb-2' style=\"font-weight: bold\">"+out+" %</h5>";
     }
 
-
 }

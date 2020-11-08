@@ -195,16 +195,20 @@ public final class Check {
             }
         }
 
-        for (int i = 0; i <finalRanks.size()-1; i++) {
+        for (int i = 0; i <finalRanks.size(); i++) {
             FinalRank temp=new FinalRank();
-            if (finalRanks.get(i).getRank_by_position()==finalRanks.get(i+1).getRank_by_position()){
-                if (compare_by_final_rank(finalRanks.get(i),finalRanks.get(i+1))){
-                    temp=finalRanks.get(i);
-                    finalRanks.set(i,finalRanks.get(i+1));
-                    finalRanks.set(i+1,temp);
-                }
+            for (int j = i+1; j <finalRanks.size(); j++) {
+                if (finalRanks.get(i).getRank_by_position()==finalRanks.get(j).getRank_by_position()){
 
+                    if (compare_by_final_rank(finalRanks.get(i),finalRanks.get(j))){
+                        temp=finalRanks.get(i);
+                        finalRanks.set(i,finalRanks.get(j));
+                        finalRanks.set(j,temp);
+                    }
+
+                }
             }
+
         }
         return finalRanks;
 
@@ -231,6 +235,7 @@ public final class Check {
 //            }
 
             if (finalRank1.getRank_by_position()==RankByPosition.STRAIGHT_FLUSH||finalRank1.getRank_by_position()==RankByPosition.STRAIGHT||finalRank1.getRank_by_position()==RankByPosition.FLUSH){
+                if ((finalRank1.getRank_by_position()==RankByPosition.STRAIGHT_FLUSH||finalRank1.getRank_by_position()==RankByPosition.STRAIGHT)||frank0==2&&frank0<f2rank0) return false;
                 return frank4 > f2rank4;
             }
             else if (finalRank1.getRank_by_position()==RankByPosition.FULL_HOUSE){
@@ -250,7 +255,7 @@ public final class Check {
 //                }
 
                 if (frank0==frank1&&frank1==frank2){
-                    if (f2rank0==f2rank1&&frank1==f2rank2){
+                    if (f2rank0==f2rank1&&f2rank1==f2rank2){
                         if (frank0>f2rank0){
                             return true;
                         }
@@ -331,51 +336,142 @@ public final class Check {
 //                        return frank0 > f2rank0;
 //                    } else return false;
 //                } else return false;
-                if (frank0==frank1&&frank2==frank3){
-                    if (f2rank0==f2rank1&&f2rank2==f2rank3){
-                        if (frank3<f2rank3) return false;
-                        if (frank3==f2rank3){
-                            if (frank0<f2rank0) return false;
-                            if (frank0==f2rank0){
-                                return frank4>f2rank4;
-                            }
-                        } else return true;
+//                if (frank0==frank1&&frank2==frank3){
+//                    if (f2rank0==f2rank1&&f2rank2==f2rank3){
+//                        if (frank3<f2rank3) return false;
+//                        if (frank3==f2rank3){
+//                            if (frank0<f2rank0) return false;
+//                            if (frank0==f2rank0){
+//                                return frank4>f2rank4;
+//                            }
+//                        } else return true;
+//                    }
+//                }
+                ArrayList<Integer> t=new ArrayList<>();
+                ArrayList<Integer> t2=new ArrayList<>();
+
+                t.add(frank0);
+                t.add(frank1);
+                t.add(frank2);
+                t.add(frank3);
+                t.add(frank4);
+
+                t2.add(f2rank0);
+                t2.add(f2rank1);
+                t2.add(f2rank2);
+                t2.add(f2rank3);
+                t2.add(f2rank4);
+
+                ArrayList<Integer> ts=sort_special_two_pair(t,true);
+                ArrayList<Integer> ts2=sort_special_two_pair(t2,true);
+//                System.out.println(ts);
+//                System.out.println(ts2);
+
+                if (ts.get(1)<ts2.get(1)){
+                    return false;
+                }
+                if (ts.get(1)>ts2.get(1)){
+                    return true;
+                } else {
+                    if (ts.get(0)<ts2.get(0)) return false;
+                    if (ts.get(0)>ts2.get(0)){
+                        return true;
+                    } else {
+                        ts=sort_special_two_pair(t,false);
+                        ts2=sort_special_two_pair(t2,false);
+//                                        System.out.println(ts);
+//                System.out.println(ts2);
+                        if (ts.get(0)<=ts2.get(0)) return false;
+                        return ts.get(0) > ts2.get(0);
+
                     }
                 }
+
+
+
 
 
             } else if (finalRank1.getRank_by_position()==RankByPosition.ONE_PAIR){
-                ArrayList<Integer> franks=new ArrayList<>();
-                ArrayList<Integer> franks2=new ArrayList<>();
-                franks.add(frank0);
-                franks.add(frank1);
-                franks.add(frank2);
-                franks.add(frank3);
-                franks.add(frank4);
-                franks2.add(f2rank0);
-                franks2.add(f2rank1);
-                franks2.add(f2rank2);
-                franks2.add(f2rank3);
-                franks2.add(f2rank4);
-                boolean m=true;
-                boolean n=true;
-                for (int i = 0; i < 4; i++) {
-                    if (m&&franks.get(i).equals(franks.get(i + 1))){
-                        franks.remove(franks.get(i));
-                        franks.remove(franks.get(i));
-                        m=false;
-                    }
-                    if (n&&franks2.get(i).equals(franks2.get(i + 1))){
-                        franks2.remove(franks2.get(i));
-                        franks2.remove(franks2.get(i));
-                        n=false;
-                    }
+//                ArrayList<Integer> franks=new ArrayList<>();
+//                ArrayList<Integer> franks2=new ArrayList<>();
+//                franks.add(frank0);
+//                franks.add(frank1);
+//                franks.add(frank2);
+//                franks.add(frank3);
+//                franks.add(frank4);
+//                franks2.add(f2rank0);
+//                franks2.add(f2rank1);
+//                franks2.add(f2rank2);
+//                franks2.add(f2rank3);
+//                franks2.add(f2rank4);
+//                boolean m=true;
+//                boolean n=true;
+//                for (int i = 0; i < 4; i++) {
+//                    if (m&&franks.get(i).equals(franks.get(i + 1))){
+//                        franks.remove(franks.get(i));
+//                        franks.remove(franks.get(i));
+//                        m=false;
+//                    }
+//                    if (n&&franks2.get(i).equals(franks2.get(i + 1))){
+//                        franks2.remove(franks2.get(i));
+//                        franks2.remove(franks2.get(i));
+//                        n=false;
+//                    }
+//                }
+//                for (int i = 2; i >= 0; i--) {
+//                    if (franks.get(i)>franks2.get(i)) {
+//                        return true;
+//                    }
+//                } return false;
+
+                ArrayList<Integer> t=new ArrayList<>();
+                ArrayList<Integer> t2=new ArrayList<>();
+
+                t.add(frank0);
+                t.add(frank1);
+                t.add(frank2);
+                t.add(frank3);
+                t.add(frank4);
+
+                t2.add(f2rank0);
+                t2.add(f2rank1);
+                t2.add(f2rank2);
+                t2.add(f2rank3);
+                t2.add(f2rank4);
+
+                ArrayList<Integer> ts=sort_special_one_pair(t,true);
+                ArrayList<Integer> ts2=sort_special_one_pair(t2,true);
+//                System.out.println(t);
+//                System.out.println(t2);
+
+                if (ts.get(0)<ts2.get(0)){
+                    return false;
                 }
-                for (int i = 2; i >= 0; i--) {
-                    if (franks.get(i)>franks2.get(i)) {
-                        return true;
-                    }
-                } return false;
+                if (ts.get(0)>ts2.get(0)){
+                    return true;
+                } else {
+
+                        ts=sort_special_one_pair(t,false);
+                        ts2=sort_special_one_pair(t2,false);
+//                    System.out.println(ts);
+//                    System.out.println(ts2);
+                        if (ts.get(2)<ts2.get(2)) return false;
+                        if (ts.get(2)>ts2.get(2)) {
+                            return true;
+                        } else {
+                            if (ts.get(1)<ts2.get(1)) return false;
+                            if (ts.get(1)>ts2.get(1)) {
+                                return true;
+                            } else {
+                                return ts.get(0) > ts2.get(0);
+                            }
+                        }
+
+
+
+                }
+
+
             } else {
                 if (frank4>f2rank4) return true;
                 if (frank4==f2rank4){
@@ -392,16 +488,70 @@ public final class Check {
 
                 } else return false;
 
-            } return false;
-
+            }
 
 
         }
         else return false;
     }
 
-    public static ArrayList<Hand> sort_special(ArrayList<Hand> hands){
+    public static ArrayList<Integer> sort_special_two_pair(ArrayList<Integer> hands, boolean bool){
+        ArrayList<Integer> temp=new ArrayList<>();
+        if (bool){
+            for (int i = 0; i <hands.size()-1; i++) {
+                if (hands.get(i).equals(hands.get(i + 1))){
+                    temp.add(hands.get(i));
+                }
+            }
+        }else {
+            if (!hands.get(4).equals(hands.get(3))){
+                temp.add(hands.get(4));
+            }
+            for (int i = 0; i <hands.size()-1 ; i++) {
+                if (hands.get(i).equals(hands.get(i + 1))){
+                    i+=2;
+                } else temp.add(hands.get(i));
 
+            }
+        }
+        return temp;
+
+    }
+
+    public static ArrayList<Integer> sort_special_one_pair(ArrayList<Integer> hands, boolean bool){
+        ArrayList<Integer> temp=new ArrayList<>();
+        if (bool){
+            for (int i = 0; i <hands.size()-1; i++) {
+                if (hands.get(i).equals(hands.get(i + 1))){
+                    temp.add(hands.get(i));
+                    return temp;
+                }
+            }
+        }else {
+            for (int i = 0; i <hands.size()-1; i++) {
+                if (hands.get(i).equals(hands.get(i + 1))){
+                    i++;
+                    temp.add(hands.get(i));
+                } else temp.add(hands.get(i));
+
+            }
+        }
+        return temp;
+
+    }
+
+
+    public static String check_string(Hand hand){
+        if (royal_flush(hand)) return "Royal flush";
+        if (straight_flush(hand)) return "Straight flush";
+        if (four_of_a_kind(hand)) return "Four of a kind";
+        if (full_house(hand)) return "Full house";
+        if (flush(hand)) return "Flush";
+        if (straight(hand)) return "Straight";
+        if (three_of_kind(hand)) return "Three of kind";
+        if (two_pair(hand)) return "Two pair";
+        if (one_pair(hand)) return "One pair";
+        else return "High card";
     }
 
 }

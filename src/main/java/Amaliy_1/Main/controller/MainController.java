@@ -16,4 +16,9 @@ public class MainController {
         return "amaliy_1";
     }
 
+    @GetMapping("/poker")
+    public String poker(){
+        return "poker";
+    }
+
 }
