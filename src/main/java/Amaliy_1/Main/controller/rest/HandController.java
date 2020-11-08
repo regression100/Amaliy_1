@@ -23,7 +23,7 @@ public class HandController {
             names[i]=Integer.toString(i+1)+"-bot";
         }
         names[count-1]="Siz";
-        ArrayList<Hand> hands=AllCards.generateHands(count,names,cards);
+        ArrayList<Hand> hands=AllCards.generateHands(cards, count,names);
 //        System.out.println(cards);
         assert hands != null;
 //        System.out.println(AllCards.sort(hands.get(0)));

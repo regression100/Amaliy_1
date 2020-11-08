@@ -51,7 +51,7 @@ public final class AllCards {
         return cards;
     }
 
-    public static ArrayList<Hand> generateHands(int handCount, String[] names, ArrayList<ArrayList<Card>> cards){
+    public static ArrayList<Hand> generateHands(ArrayList<ArrayList<Card>> cards, int handCount, String[] names){
         if (handCount>10||handCount<2||names.length!=handCount){
             return null;
         }
