@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<title>Labirint topuvchi/generatsiya</title>
+	<link rel="stylesheet" type="text/css" media="all"
+		  href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body style="display:flex; flex-direction: row; background-color: lightgray">
+	<canvas></canvas>
+	<div>
+		<button class="btn btn-success" id="generate">Generatsiya qilish (5-100): </button>
+		<input class="" id="size" type="text" value="10"/>
+		<button class="btn btn-success"  id="solve" style="display:block;">Topish</button>
+		<button class="btn btn-success"  id="clear" style="display:block;">Natijani o'chirish</button>
+	</div>
+</body>
+<script th:inline="javascript" th:src="@{/js/maze.js}" src="../static/js/maze.js"></script>
+</html>

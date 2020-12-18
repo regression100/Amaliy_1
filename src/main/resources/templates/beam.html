@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" th:href="@{/css/main.css}" href="../static/css/main.css"  />
+  <link rel="stylesheet" type="text/css" media="all"
+        href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body style="background-color: gray" class="text-center text-center d-flex justify-content-center">
+
+
+<div class="row justify-content-center d-flex text-center">
+  <h3 class="col-12 mb-2 mt-2">Beam search algoritmida Tik Tak Toe o'yini</h3>
+  <table class="col-9 ml-5 mr-5 w-25">
+    <tr>
+      <td class="cell" id="0"></td>
+      <td class="cell" id="1"></td>
+      <td class="cell" id="2"></td>
+    </tr>
+    <tr>
+      <td class="cell" id="3"></td>
+      <td class="cell" id="4"></td>
+      <td class="cell" id="5"></td>
+    </tr>
+    <tr>
+      <td class="cell" id="6"></td>
+      <td class="cell" id="7"></td>
+      <td class="cell" id="8"></td>
+    </tr>
+  </table>
+
+  <button class="col-4 mt-3" onClick="onStartGame()">
+    Qaytadan
+  </button>
+
+  <div class="end-game col-12">
+    <div class="text"></div>
+  </div>
+
+</div>
+
+
+
+  <!-- <script src="simpleAi.js"></script> -->
+  <script th:inline="javascript" th:src="@{/js/simpleAi.js}" src="../static/js/simpleAi.js"></script>
+
+</body>
+</html>

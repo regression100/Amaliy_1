@@ -21,4 +21,32 @@ public class MainController {
         return "poker";
     }
 
+
+
+    @GetMapping("/hill")
+    public String hill(){
+        return "hill";
+    }
+
+
+    @GetMapping("/beam")
+    public String beam(){
+        return "beam";
+    }
+
+    @GetMapping("/optimal")
+    public String optimal(){
+        return "optimal";
+    }
+
+    @GetMapping("/game15")
+    public String game15(){
+        return "game15";
+    }
+
+    @GetMapping("/maze")
+    public String maze(){
+        return "alpha_beta_maze";
+    }
+
 }

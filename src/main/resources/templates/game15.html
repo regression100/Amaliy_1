@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>15 Puzzle</title>
+	<link rel="stylesheet" th:href="@{/css/game15.css}" href="../static/css/game15.css">
+	<link rel="stylesheet" type="text/css" media="all"
+		  href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body style="background-color: gray">
+	<div id="puzzle"></div>
+	<div id="controls">
+		<button id="solve">Solve</button>		
+		<button id="scramble">Scramble</button>
+	</div>
+	
+	<p>by Mahmud Salomov</p>
+</body>
+<script th:inline="javascript" th:src="@{/js/game15.js}" src="../static/js/game15.js"></script>
+
+</html>
