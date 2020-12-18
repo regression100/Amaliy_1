@@ -179,7 +179,7 @@
         }
 
         // Puzzle is solved, offers to scramble it
-        if(confirm('Congrats, You did it! \nScramble the puzzle?')){
+        if(confirm('Yutdingiz! \nAralashtirilsinmi?')){
             scramble();
         }
 

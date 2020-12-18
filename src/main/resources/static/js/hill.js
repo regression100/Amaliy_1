@@ -57,16 +57,26 @@ function gets1s2() {
         .then(function (response) {
             let a=JSON.parse(JSON.stringify(response.data))
             let p="";
+            let out="<h5 class='col-12 mt-5'>Qadamlar</h5>";
 
-            console.log(a)
-            // for (let i = 0; i < a.length; i++) {
-            //     let r="<div class=\"col-12\">";
-            //
-            //     for (let j = 0; j <a[i].length ; j++) {
-            //         // r+=" "+a[i].[]
-            //         console.log(a)
-            //     }
-            // }
+            // console.log(response.data.lists)
+            // console.log(JSON.stringify(response.data))
+            // console.log(a.lists)
+            // console.log()
+            for (let i = 0; i < a.lists.length; i++) {
+                p="<div class=\"col-12\">";
+
+                for (let j = 0; j <a.lists[i].length ; j++) {
+                    p+=" "+a.lists[i][j]
+                    // console.log(a)
+                }
+                p+="</div>";
+                out+=p;
+                // console.log(p);
+            }
+    document.getElementById('root').innerHTML=out;
+    document.getElementById('root1').innerHTML="";
+            // console.log(out);
 
         })
 }

@@ -38,7 +38,7 @@ public class HillClimbingController {
             for (State state : solutionSequence) {
                 api.add(HillClimbing.printEachStep(state));
             }
-            System.out.println(api);
+//            System.out.println(api);
             apiModel.setLists(api);
 
         } catch (Exception e) {

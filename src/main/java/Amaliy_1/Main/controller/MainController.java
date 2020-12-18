@@ -49,4 +49,18 @@ public class MainController {
         return "alpha_beta_maze";
     }
 
+    @GetMapping("/ocr")
+    public String ocr(){
+        return "ocr";
+    }
+
+
+
+
+
+    @GetMapping("/ml")
+    public String ml(){
+        return "ml";
+    }
+
 }

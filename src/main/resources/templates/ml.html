@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<title>LearnSnake</title>
+	<link rel="stylesheet" th:href="@{/css/ml.css}" href="../static/css/ml.css" >
+	<link rel="stylesheet" type="text/css" media="all"
+		  href="../static/css/style.css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body style="background-color: lightgrey">
+<nav class="fixed-top">
+
+	<a href="/" style="color: white" class="float-left btn btn-success m-1">Bosh sahifa</a>
+	<h3 style="font-weight: bold">11-Amaliy ish (Mashina ta'limi). Ilon o'yinida, ilon ta'lim oladi</h3>
+	<h5 style="font-weight: lighter">Mustahkamlashni o'rganish (Reinforcement Q-learning)</h5>
+</nav>
+
+
+	<div class="mt-5" id="game-container">
+		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
+
+		<div id="setup-container">
+			<div id="game-info">
+				<p id="score" class="info-score">Umumiy ochko: </p>
+				<p id="missed" class="info-score">O'limlar soni: </p>
+			</div>
+
+			<div id="game-setup">
+				<p class="title-slider">Ta'lim darajasi</p>
+				<input id="rangeLR" type="range" class="slider" min="0" max="100" value="65">
+				<p class="title-slider">Chegirma koeffisiyenti (DF)</p>
+				<input id="rangeDF" type="range" class="slider" min="0" max="100" value="80">
+				<p class="title-slider">Tasodifiylik</p>
+				<input id="rangeRandom" type="range" class="slider" min="0" max="100" value="5">
+
+				<div class="item-container">
+					<input id="fullSet" class="checkbox-fullset" type="checkbox">
+					<label for="fullSet" class="title-slider">Barcha hollarni ko'rib chiqish <small>(ko'p vaqt ketishi mumkin)</small></label>
+				</div>
+				<div class="item-container">
+					<button id="btnTrain" type="button" class="btnGame">&#9654; TALIM</button>
+					<button id="btnReset" type="button" class="btnGame btnReset">Boshidan</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="fixed-bottom d-flex justify-content-center">
+
+		<h5 class="" style="font-style: oblique; opacity: 20%">by Mahmud Salomov</h5>
+	</footer>
+</body>
+<script th:inline="javascript" th:src="@{/js/game.js}" src="../static/js/game.js"></script>
+<script th:inline="javascript" th:src="@{/js/q-learning.js}" src="../static/js/q-learning.js"></script>
+<script th:inline="javascript" th:src="@{/js/user-interface.js}" src="../static/js/user-interface.js"></script>
+</html>
