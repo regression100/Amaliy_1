@@ -63,4 +63,9 @@ public class MainController {
         return "ml";
     }
 
+    @GetMapping("/yakuniy")
+    public String yakuniy(){
+        return "puzzle8";
+    }
+
 }

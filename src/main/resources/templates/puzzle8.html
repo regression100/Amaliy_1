@@ -1,0 +1,89 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>8-Puzzle Solver</title>
+    <meta name="description" content="breadth-first,
+        uniform-cost, depth-first, iterative-deepening, greedy-best and A* search algorithms.">
+    <meta name="author" content="Mahmud Salomov">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="./favicon.png" />
+
+    <!-- build:css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/p.css}" />
+    <link rel="stylesheet" type="text/css" media="all"
+           th:href="@{/css/bootstrap.min.css}" />
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div id="board">
+        <div id="board-item-1" class="board-item">1</div>
+        <div id="board-item-2" class="board-item">2</div>
+        <div id="board-item-3" class="board-item">3</div>
+        <div id="board-item-4" class="board-item">4</div>
+        <div id="board-item-5" class="board-item">5</div>
+        <div id="board-item-6" class="board-item">6</div>
+        <div id="board-item-7" class="board-item">7</div>
+        <div id="board-item-8" class="board-item">8</div>
+    </div>
+    <div id="visualization"></div>
+    <div id="controls">
+        <div class="heading">Maydon</div>
+        <div class="content">
+            <button id="randomize">Tasodifiy</button>
+            <button id="customInput">Qiymat berish</button>
+        </div>
+
+        <div class="heading">Qidiruv</div>
+        <div class="content">
+            <label>Algoritm</label>
+            <select id="searchType">
+                <option value="breadthFirst">Breadth-First</option>
+                <option value="uniformCost">Uniform-Cost</option>
+                <option value="depthFirst">Depth-First</option>
+                <option value="iterativeDeepening">Iterative-Deepening</option>
+                <option value="greedyBest" selected>Greedy-Best</option>
+                <option value="aStar">A*</option>
+            </select>
+            <label>Takrorlash chegarasi</label>
+            <input type="number" id="iterationLimit" value="10000">
+            <label>Chuqurliklar chegarasi</label>
+            <input type="number" id="depthLimit" value="0">
+            <label style="display: none;">
+                <input type="checkbox" id="visualizationCheck" checked>
+                Vizualizatsiya
+            </label>
+            <label style="display: none;">
+                <input type="checkbox" id="expandedNodeCheck">
+                Tekshirishni optimallashtirish
+            </label>
+
+            <button id="searchStep">Bitta qadam</button>
+            <button id="search">Qidirish</button>
+            <button id="searchStop" style="display: none;">To'xtatish</button>
+        </div>
+
+        <div class="heading">Qidiruv natijasi</div>
+        <div id="searchResult" class="content"></div>
+    </div>
+
+
+    <!-- build:js -->
+    <script   src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@2.6.4/lib/bodyScrollLock.min.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/utils.js}" src="./js/utils.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/node.js}" src="./js/node.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/game.js}" src="./js/game.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/board.js}" src="./js/board.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/visualization.js}" src="./js/visualization.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/search.js}" src="./js/search.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/app.js}" src="./js/app.js"></script>
+    <script th:inline="javascript" th:src="@{/js/p/countly.js}" src="./js/countly.js"></script>
+
+    <!-- endbuild -->
+</body>
+</html>

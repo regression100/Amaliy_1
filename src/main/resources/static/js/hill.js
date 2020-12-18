@@ -21,8 +21,8 @@ function son() {
             "<div class=\"row text-center d-flex justify-content-center mt-2\">";
 
         for (let i = 0; i < count; i++) {
-            t1+="<input id='"+i+"' class=\"form-control w-25 col-1\" placeholder=\"(2-10)\">";
-            t2+="<input id='"+"q"+i+"' class=\"form-control w-25 col-1\" placeholder=\"(2-10)\">";
+            t1+="<input id='"+i+"' class=\"form-control w-25 col-1\" placeholder=\"\">";
+            t2+="<input id='"+"q"+i+"' class=\"form-control w-25 col-1\" placeholder=\"\">";
 
         }
         t1+="</div>";

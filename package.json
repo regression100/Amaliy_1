@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.21.0",
+    "lodash": "^4.17.20",
     "tesseract.js": "^2.1.4"
   }
 }
