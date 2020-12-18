@@ -10,11 +10,15 @@
           href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body style="background-color: lightgrey" class="text-center text-center d-flex justify-content-center">
+<nav class="fixed-top">
 
-<div class="row justify-content-center d-flex text-center">
-    <h3 class="col-12 mb-2 mt-2">Optimal search algoritmida Tik Tak Toe o'yini</h3>
+    <a href="/" style="color: white" class="float-left btn btn-success m-1">Bosh sahifa</a>
+    <h3 class="mb-2 mt-2">Optimal search algoritmida X0 (Tik Tak Toe) o'yini</h3>
 
-    <table class="col-9 ml-5 mr-5 w-25">
+</nav>
+<div class="row justify-content-center mt-5 d-flex text-center">
+
+    <table class="col-9 ml-5 mr-5 mt-3 w-25">
         <tr>
             <td class="cell" id="0"></td>
             <td class="cell" id="1"></td>
@@ -32,7 +36,7 @@
         </tr>
     </table>
 
-    <button class="col-4 mt-3" onClick="onStartGame()">
+    <button class="col-4 mt-3 btn btn-success" onClick="onStartGame()">
         Qaytadan
     </button>
 
