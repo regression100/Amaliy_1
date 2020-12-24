@@ -35,6 +35,7 @@ customInputButton.addEventListener('click', function() {
     searchResultDiv.innerHTML = '';
 }, false);
 
+
 searchButton.addEventListener('click', function() {
     Board.clearReplay();
     searchStepOptions = null;
