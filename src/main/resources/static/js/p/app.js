@@ -30,7 +30,7 @@ randomizeButton.addEventListener('click', function() {
 
 customInputButton.addEventListener('click', function() {
     Board.clearReplay();
-    game.state = prompt('O\'yin holatini, yuqori chapdan o\'ngdan pastgacha, 8 ta belgidan, masalan. "12345678"');
+    game.state = prompt('O\'yin holatini, yuqori chapdan o\'ngdan pastgacha, 9 ta belgidan, masalan. "012345678"');
     Board.draw(game.state);
     searchResultDiv.innerHTML = '';
 }, false);
